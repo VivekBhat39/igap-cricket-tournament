@@ -49,6 +49,13 @@ const AdminDashboard = () => {
                 <i className="bi bi-table fs-4 me-1"></i>
                 <span className="fs-5">View Point Table</span>
               </Link>
+              <Link
+                to="/admin/update-match-result"
+                className="list-group-item list-group-item-action d-flex align-items-center py-3"
+              >
+                <i className="bi bi-table fs-4 me-1"></i>
+                <span className="fs-5">Admin Update Match Result</span>
+              </Link>
             </div>
           </div>
         </div>

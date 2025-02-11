@@ -6,6 +6,7 @@ function UpdateMatchResult() {
   const [selectedMatch, setSelectedMatch] = useState(null);
   const [scoreA, setScoreA] = useState(0);
   const [scoreB, setScoreB] = useState(0);
+  const [result, setResult] = useState("Scheduled")
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/api/matches`)
@@ -14,6 +15,13 @@ function UpdateMatchResult() {
   }, []);
 
   const handleUpdate = async (e) => {
+
+    const scoreData = {
+      scoreA: parseInt(scoreA),
+      scoreB: parseInt(scoreB),
+    }
+
+
     e.preventDefault();
     try {
       await axios.put(`${import.meta.env.VITE_API_URL}/api/matches/update/${selectedMatch}`, { scoreA, scoreB });
@@ -29,9 +37,11 @@ function UpdateMatchResult() {
       <h2>Update Match Result</h2>
       <select className="form-select mb-3" onChange={(e) => setSelectedMatch(e.target.value)}>
         <option>Select Match</option>
-        {matches.map(match => (
-          <option key={match._id} value={match._id}>{match.teamA} vs {match.teamB} on {new Date(match.date).toLocaleDateString()}</option>
-        ))}
+        {matches.map(match => {
+          return (
+            <option key={match._id} value={match._id}>{match.teamA} vs {match.teamB}</option>
+          )
+        })}
       </select>
       <form onSubmit={handleUpdate}>
         <div className="mb-3">

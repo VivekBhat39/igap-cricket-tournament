@@ -4,7 +4,7 @@ const Admin = require('../models/Admin');
 const router = express.Router();
 
 // Admin login
-router.post('/login', async (req, res) => {
+router.post('/login', async (req, res) => {  
   const { username, password } = req.body;
   const admin = await Admin.findOne({ username });
   if (admin && (await admin.matchPassword(password))) {

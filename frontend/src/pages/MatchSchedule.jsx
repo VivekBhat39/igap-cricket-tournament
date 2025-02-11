@@ -11,6 +11,12 @@ const MatchSchedule = () => {
       setMatches(response.data);
     };
     fetchMatches();
+
+    // axios.get("https://67a6b848510789ef0dfc04e8.mockapi.io/matches")
+    //   .then((res) => {
+    //     // console.log(res.data);
+    //     setMatches(res.data);
+    //   })
   }, []);
 
   return (
@@ -38,7 +44,6 @@ const MatchSchedule = () => {
           <tr>
             <th>Team A</th>
             <th>Team B</th>
-            <th>Date</th>
             <th>Result</th>
           </tr>
         </thead>
@@ -47,7 +52,6 @@ const MatchSchedule = () => {
             <tr key={match._id}>
               <td>{match.teamA}</td>
               <td>{match.teamB}</td>
-              <td>{new Date(match.date).toLocaleDateString()}</td>
               <td>{match.result}</td>
             </tr>
           ))}

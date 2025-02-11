@@ -13,6 +13,11 @@ const ScheduleMatch = () => {
       setTeams(response.data);
     };
     fetchTeams();
+    // axios.get("https://67a6b848510789ef0dfc04e8.mockapi.io/teams")
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     setTeams(res.data);
+    //   })
   }, []);
 
   const handleScheduleMatch = async (e) => {
@@ -24,6 +29,25 @@ const ScheduleMatch = () => {
       alert('Failed to schedule match');
     }
   };
+
+  // function handleScheduleMatch(e) {
+  //   e.preventDefault();
+
+  //   const data = {
+  //     teamA: teamA,
+  //     teamB: teamB,
+  //     scoreA: 0,
+  //     scoreB: 0,
+  //     result: "Scheduled"
+  //   };
+
+  //   axios.post("https://67a6b848510789ef0dfc04e8.mockapi.io/matches", data)
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       alert("Match Scheduled")
+  //     })
+
+  // }
 
   return (
     <div className="container mt-5">

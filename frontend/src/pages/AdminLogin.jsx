@@ -16,6 +16,15 @@ function AdminLogin() {
     }
   };
 
+  // function handleLogin(e) {
+  //   e.preventDefault();
+  //   if (username == "admin" && password == "admin") {
+  //     window.location.href = '/admin/dashboard';
+  //   } else {
+  //     alert("Invalid Credentioal !!!")
+  //   }
+  // }
+
   return (
     <div className="container mt-5">
       <h2>Admin Login</h2>

@@ -9,6 +9,12 @@ function PointTable() {
     axios.get(`${import.meta.env.VITE_API_URL}/api/teams`)
       .then(response => setTeams(response.data))
       .catch(error => console.error('Error fetching teams:', error));
+
+    // axios.get("https://67a6b848510789ef0dfc04e8.mockapi.io/teams")
+    //   .then((res) => {
+    //     // console.log(res.data);
+    //     setTeams(res.data)
+    //   })
   }, []);
 
   return (

@@ -16,6 +16,27 @@ const CreateTeam = () => {
     }
   };
 
+  // function handleCreateTeam(e) {
+  //   e.preventDefault();
+  //   const data = {
+  //     name: name,
+  //     players: players,
+  //     points: 0,
+  //     matchesPlayed: 0,
+  //     wins: 0,
+  //     losses: 0
+  //   };
+
+  //   axios.post("https://67a6b848510789ef0dfc04e8.mockapi.io/teams", data)
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       alert("Team Added")
+  //       setName("")
+  //       setPlayers("")
+  //     })
+
+  // };
+
   return (
     <div className="container mt-5">
       <h2>Create New Team</h2>
